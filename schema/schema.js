@@ -8,11 +8,15 @@ const typeDefs = gql`
 
     type Sleeplog {
         id: Int!
-        name: String!
-        brand: String
-        price: Float
+        bedtime: String!
+        approximateSleepTime: String!
+        hoursSlept: Int!
+        wakeUpTime: String!
+        ateSpicy: Boolean!
+        drankAlcohol: Boolean!
+        sleepMeds: Boolean!
     }
-
+    
     type Query {
         current: User
         sleeplog(id: Int!): Sleeplog

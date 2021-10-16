@@ -15,23 +15,23 @@ const resolvers = {
     },
 
     Mutation: {
-        async register(_, { login, password }) {
+        async register(_, { email, password }) {
             const user = await User.create({
-                login,
+                email,
                 password: await bcrypt.hash(password, 10),
             });
 
-            return jsonwebtoken.sign({ id: user.id, login: user.login }, JWT_SECRET, {
+            return jsonwebtoken.sign({ id: user.id, email: user.email }, JWT_SECRET, {
                 expiresIn: "3m",
             });
         },
 
-        async login(_, { login, password }) {
-            const user = await User.findOne({ where: { login } });
+        async login(_, { email, password }) {
+            const user = await User.findOne({ where: { email } });
 
             if (!user) {
                 throw new Error(
-                    "This user doesn't exist. Please, make sure to type the right login."
+                    "This user doesn't exist. Please, make sure to type the right email."
                 );
             }
 
@@ -41,7 +41,7 @@ const resolvers = {
                 throw new Error("You password is incorrect!");
             }
 
-            return jsonwebtoken.sign({ id: user.id, login: user.login }, JWT_SECRET, {
+            return jsonwebtoken.sign({ id: user.id, email: user.email }, JWT_SECRET, {
                 expiresIn: "1d",
             });
         },
