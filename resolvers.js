@@ -45,6 +45,18 @@ const resolvers = {
                 expiresIn: "1d",
             });
         },
+
+        // async newSleeplog(_, { 
+        //     bedtime,
+        //     approximateSleepTime,
+        //     wakeUpTime,
+        //     ateSpicy,
+        //     drankAlcohol,
+        //     sleepMeds,
+        //     userId 
+        // }) {
+        //     console.log(argumenets);
+        // },
     },
 };
 

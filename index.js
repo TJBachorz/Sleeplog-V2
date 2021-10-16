@@ -8,7 +8,7 @@ const resolvers = require("./resolvers");
 const JWT_SECRET = require("./constants");
 
 const auth = jwt({
-    algorithms: ['RS256'],
+    algorithms: ['sha1', 'RS256', 'HS256'],
     credentialsRequired: false,
     secret: JWT_SECRET,
 });
