@@ -54,13 +54,26 @@ const resolvers = {
         },
 
         async newSleeplog(_, { 
+            nightOfDate,
             bedtime,
-            userId 
+            approximateSleepTime,
+            numberOfTimesAwoken,
+            wakeUpTime,
+            ateSpicy,
+            drankAlcohol,
+            sleepMeds,
+            userId, 
         }) {
-            console.log("FIRING NEWSLEEPLOG")
             const sleeplog = await Sleeplog.create({
+                nightOfDate,
                 bedtime,
-                userId
+                approximateSleepTime,
+                numberOfTimesAwoken,
+                wakeUpTime,
+                ateSpicy,
+                drankAlcohol,
+                sleepMeds,
+                userId,
             });
             console.log("Sleeplog:", sleeplog)
             

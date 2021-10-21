@@ -8,7 +8,15 @@ const typeDefs = gql`
 
     type Sleeplog {
         id: Int!
+        nightOfDate: String!
         bedtime: String!
+        approximateSleepTime: String!
+        hoursSlept: Int!
+        numberOfTimesAwoken: Int!
+        wakeUpTime: String!
+        ateSpicy: Boolean!
+        drankAlcohol: Boolean!
+        sleepMeds: Boolean!
         userId: Int!
     }
     
@@ -20,8 +28,15 @@ const typeDefs = gql`
     type Mutation {
         register(email: String!, password: String!): String
         login(email: String!, password: String!): String
-        newSleeplog(
+        newSleeplog( 
+            nightOfDate: String!
             bedtime: String!
+            approximateSleepTime: String!
+            numberOfTimesAwoken: Int!
+            wakeUpTime: String!
+            ateSpicy: Boolean!
+            drankAlcohol: Boolean!
+            sleepMeds: Boolean!
             userId: Int!
         ): Sleeplog
     }

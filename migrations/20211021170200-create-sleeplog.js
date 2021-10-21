@@ -20,6 +20,9 @@ module.exports = {
       sleepInterrupted: {
         type: Sequelize.INTEGER
       },
+      sleepLostFromInterruptions: {
+        type: Sequelize.INTEGER
+      },
       wakeUpTime: {
         type: Sequelize.STRING
       },
@@ -31,9 +34,6 @@ module.exports = {
       },
       sleepMeds: {
         type: Sequelize.BOOLEAN
-      },
-      hoursSlept: {
-        type: Sequelize.INTEGER
       },
       userId: {
         type: Sequelize.INTEGER
