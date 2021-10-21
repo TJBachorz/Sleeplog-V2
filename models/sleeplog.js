@@ -28,5 +28,11 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Sleeplog',
   });
+  Sleeplog.associate = function(models) {
+    Sleeplog.belongsTo(models.User, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE'
+    })
+  };
   return Sleeplog;
 };
