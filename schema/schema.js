@@ -11,8 +11,8 @@ const typeDefs = gql`
         nightOfDate: String!
         bedtime: String!
         approximateSleepTime: String!
-        hoursSlept: Int!
-        numberOfTimesAwoken: Int!
+        sleepInterrupted: Int!
+        sleepLostFromInterruptions: Int!
         wakeUpTime: String!
         ateSpicy: Boolean!
         drankAlcohol: Boolean!
@@ -32,7 +32,8 @@ const typeDefs = gql`
             nightOfDate: String!
             bedtime: String!
             approximateSleepTime: String!
-            numberOfTimesAwoken: Int!
+            sleepInterrupted: Int!
+            sleepLostFromInterruptions: Int!
             wakeUpTime: String!
             ateSpicy: Boolean!
             drankAlcohol: Boolean!
