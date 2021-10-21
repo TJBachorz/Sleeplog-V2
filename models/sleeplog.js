@@ -14,8 +14,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Sleeplog.init({
-    userId: DataTypes.INTEGER,
-    bedtime: DataTypes.STRING
+    nightOfDate: DataTypes.STRING,
+    bedtime: DataTypes.STRING,
+    approximateSleepTime: DataTypes.STRING,
+    sleepInterrupted: DataTypes.INTEGER,
+    wakeUpTime: DataTypes.STRING,
+    ateSpicy: DataTypes.BOOLEAN,
+    drankAlcohol: DataTypes.BOOLEAN,
+    sleepMeds: DataTypes.BOOLEAN,
+    hoursSlept: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Sleeplog',

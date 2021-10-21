@@ -8,39 +8,49 @@ const typeDefs = gql`
 
     type Sleeplog {
         id: Int!
-        nightOfDate: String!
         bedtime: String!
-        approximateSleepTime: String!
-        hoursSlept: Int!
-        numberOfTimesAwoken: Int!
-        wakeUpTime: String!
-        ateSpicy: Boolean!
-        drankAlcohol: Boolean!
-        sleepMeds: Boolean!
         userId: Int!
     }
     
     type Query {
         current: User
-        sleeplog(id: Int!): Sleeplog
-        sleeplogs(brand: String!): [Sleeplog]
+        findSleeplog(id: Int!): Sleeplog
     }
 
     type Mutation {
         register(email: String!, password: String!): String
         login(email: String!, password: String!): String
         newSleeplog(
-            nightOfDate: String!
             bedtime: String!
-            approximateSleepTime: String!
-            numberOfTimesAwoken: Int!
-            wakeUpTime: String!
-            ateSpicy: Boolean!
-            drankAlcohol: Boolean!
-            sleepMeds: Boolean!
             userId: Int!
         ): Sleeplog
     }
-`;
+    `;
+    
+    module.exports = typeDefs;
+    // newSleeplog(
+    //     nightOfDate: String!
+    //     bedtime: String!
+    //     approximateSleepTime: String!
+    //     numberOfTimesAwoken: Int!
+    //     wakeUpTime: String!
+    //     ateSpicy: Boolean!
+    //     drankAlcohol: Boolean!
+    //     sleepMeds: Boolean!
+    //     userId: Int!
+    // ): Sleeplog
 
-module.exports = typeDefs;
+
+    // type Sleeplog {
+    //     id: Int!
+    //     nightOfDate: String!
+    //     bedtime: String!
+    //     approximateSleepTime: String!
+    //     hoursSlept: Int!
+    //     numberOfTimesAwoken: Int!
+    //     wakeUpTime: String!
+    //     ateSpicy: Boolean!
+    //     drankAlcohol: Boolean!
+    //     sleepMeds: Boolean!
+    //     userId: Int!
+    // }

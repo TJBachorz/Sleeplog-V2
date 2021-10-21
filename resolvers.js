@@ -1,4 +1,4 @@
-const { User } = require("./models");
+const { Sleeplog, User } = require("./models");
 const bcrypt = require("bcrypt");
 const jsonwebtoken = require("jsonwebtoken");
 
@@ -11,6 +11,13 @@ const resolvers = {
                 return await User.findOne({ where: { id: user.id } });
             }
             throw new Error("Sorry, you're not an authenticated user!");
+        },
+
+        async findSleeplog(_, { id }) {
+            if (id) {
+                return await Sleeplog.findOne({ where: { id: id } });
+            }
+            throw new Error("Sleeplog not found")
         }
     },
 
@@ -46,18 +53,31 @@ const resolvers = {
             });
         },
 
-        // async newSleeplog(_, { 
-        //     bedtime,
-        //     approximateSleepTime,
-        //     wakeUpTime,
-        //     ateSpicy,
-        //     drankAlcohol,
-        //     sleepMeds,
-        //     userId 
-        // }) {
-        //     console.log(argumenets);
-        // },
+        async newSleeplog(_, { 
+            bedtime,
+            userId 
+        }) {
+            console.log("FIRING NEWSLEEPLOG")
+            const sleeplog = await Sleeplog.create({
+                bedtime,
+                userId
+            });
+            console.log("Sleeplog:", sleeplog)
+            
+            return sleeplog;
+        },
     },
 };
 
 module.exports = resolvers;
+// async newSleeplog(_, { 
+//     bedtime,
+//     approximateSleepTime,
+//     wakeUpTime,
+//     ateSpicy,
+//     drankAlcohol,
+//     sleepMeds,
+//     userId 
+// }) {
+//     console.log(argumenets);
+// },
