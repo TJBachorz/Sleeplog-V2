@@ -18,6 +18,13 @@ const resolvers = {
                 return await Sleeplog.findOne({ where: { id: id } });
             }
             throw new Error("Sleeplog not found")
+        },
+
+        async userSleeplogs(_, { id }) {
+            if (id) {
+                return await Sleeplog.findAll({ where: { id: id } })
+            }
+            throw new Error("Sleeplog not found")
         }
     },
 
