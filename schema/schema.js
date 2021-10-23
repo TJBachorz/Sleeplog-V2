@@ -23,6 +23,7 @@ const typeDefs = gql`
     type Query {
         current: User
         findSleeplog(id: Int!): Sleeplog
+        userSleeplogs(id: Int!): [Sleeplog]
     }
 
     type Mutation {
