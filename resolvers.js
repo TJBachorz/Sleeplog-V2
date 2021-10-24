@@ -15,14 +15,14 @@ const resolvers = {
 
         async findSleeplog(_, { id }) {
             if (id) {
-                return await Sleeplog.findOne({ where: { id: id } });
+                return await Sleeplog.findOne({ where: { userId: id } });
             }
             throw new Error("Sleeplog not found")
         },
 
         async userSleeplogs(_, { id }) {
             if (id) {
-                return await Sleeplog.findAll({ where: { id: id } })
+                return await Sleeplog.findAll({ where: { userId: id } });
             }
             throw new Error("Sleeplog not found")
         }
