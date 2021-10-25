@@ -26,7 +26,7 @@ module.exports = {
       },
       sleepLostFromInterruptions: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.DECIMAL(10,2)
       },
       wakeUpTime: {
         allowNull: false,
