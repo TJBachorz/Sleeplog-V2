@@ -20,7 +20,7 @@ const resolvers = {
             throw new Error("Sleeplog not found")
         },
 
-        async userSleeplogs(_, { id }) {
+        async getSleeplogs(_, { id }) {
             if (id) {
                 return await Sleeplog.findAll({ where: { userId: id } });
             }
@@ -92,14 +92,3 @@ const resolvers = {
 };
 
 module.exports = resolvers;
-// async newSleeplog(_, { 
-//     bedtime,
-//     approximateSleepTime,
-//     wakeUpTime,
-//     ateSpicy,
-//     drankAlcohol,
-//     sleepMeds,
-//     userId 
-// }) {
-//     console.log(argumenets);
-// },

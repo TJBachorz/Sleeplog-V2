@@ -23,7 +23,7 @@ const typeDefs = gql`
     type Query {
         current: User
         findSleeplog(id: Int!): Sleeplog
-        userSleeplogs(id: Int!): [Sleeplog]
+        getSleeplogs(id: Int!): [Sleeplog]
     }
 
     type Mutation {
@@ -45,29 +45,3 @@ const typeDefs = gql`
     `;
     
     module.exports = typeDefs;
-    // newSleeplog(
-    //     nightOfDate: String!
-    //     bedtime: String!
-    //     approximateSleepTime: String!
-    //     numberOfTimesAwoken: Int!
-    //     wakeUpTime: String!
-    //     ateSpicy: Boolean!
-    //     drankAlcohol: Boolean!
-    //     sleepMeds: Boolean!
-    //     userId: Int!
-    // ): Sleeplog
-
-
-    // type Sleeplog {
-    //     id: Int!
-    //     nightOfDate: String!
-    //     bedtime: String!
-    //     approximateSleepTime: String!
-    //     hoursSlept: Int!
-    //     numberOfTimesAwoken: Int!
-    //     wakeUpTime: String!
-    //     ateSpicy: Boolean!
-    //     drankAlcohol: Boolean!
-    //     sleepMeds: Boolean!
-    //     userId: Int!
-    // }
