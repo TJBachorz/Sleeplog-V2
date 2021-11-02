@@ -1,6 +1,8 @@
 require('dotenv/config');
 
 const app = require("express")();
+const cors = require("cors");
+app.use(cors());
 const { ApolloServer } = require("apollo-server-express");
 const jwt = require("express-jwt");
 const typeDefs = require("./schema/schema");

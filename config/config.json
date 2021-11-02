@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "postgres",
-    "password": "postgres",
-    "database": "sleep",
+    "password": null,
+    "database": "sleepdb",
     "host": "localhost",
     "dialect": "postgres"
   },

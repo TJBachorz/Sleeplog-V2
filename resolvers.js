@@ -15,14 +15,14 @@ const resolvers = {
 
         async findSleeplog(_, { id }) {
             if (id) {
-                return await Sleeplog.findOne({ where: { userId: id } });
+                return Sleeplog.findOne({ where: { id: id } });
             }
             throw new Error("Sleeplog not found")
         },
 
         async getSleeplogs(_, { id }) {
             if (id) {
-                return await Sleeplog.findAll({ where: { userId: id } });
+                return Sleeplog.findAll({ where: { userId: id } });
             }
             throw new Error("Sleeplog not found")
         }
@@ -72,7 +72,7 @@ const resolvers = {
             sleepMeds,
             userId, 
         }) {
-            const sleeplog = await Sleeplog.create({
+            return Sleeplog.create({
                 nightOfDate,
                 bedtime,
                 approximateSleepTime,
@@ -84,9 +84,6 @@ const resolvers = {
                 sleepMeds,
                 userId,
             });
-            console.log("Sleeplog:", sleeplog)
-            
-            return sleeplog;
         },
     },
 };
