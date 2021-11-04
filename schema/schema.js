@@ -18,6 +18,7 @@ const typeDefs = gql`
         drankAlcohol: Boolean!
         sleepMeds: Boolean!
         userId: Int!
+        notes: String
     }
     
     type Query {
@@ -40,6 +41,7 @@ const typeDefs = gql`
             drankAlcohol: Boolean!
             sleepMeds: Boolean!
             userId: Int!
+            notes: String
         ): Sleeplog
     }
     `;

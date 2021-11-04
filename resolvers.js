@@ -70,7 +70,8 @@ const resolvers = {
             ateSpicy,
             drankAlcohol,
             sleepMeds,
-            userId, 
+            userId,
+            notes
         }) {
             return Sleeplog.create({
                 nightOfDate,
@@ -83,6 +84,7 @@ const resolvers = {
                 drankAlcohol,
                 sleepMeds,
                 userId,
+                notes
             });
         },
     },
