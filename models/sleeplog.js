@@ -19,12 +19,14 @@ module.exports = (sequelize, DataTypes) => {
     approximateSleepTime: DataTypes.STRING,
     sleepInterrupted: DataTypes.INTEGER,
     sleepLostFromInterruptions: DataTypes.DECIMAL(10,2),
+    wakeUpDate: DataTypes.STRING,
     wakeUpTime: DataTypes.STRING,
     ateSpicy: DataTypes.BOOLEAN,
     drankAlcohol: DataTypes.BOOLEAN,
     sleepMeds: DataTypes.BOOLEAN,
     userId: DataTypes.INTEGER,
-    notes: DataTypes.STRING
+    notes: DataTypes.STRING,
+    points: DataTypes.DECIMAL(10,2)
   }, {
     sequelize,
     modelName: 'Sleeplog',

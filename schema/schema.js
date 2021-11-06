@@ -13,13 +13,14 @@ const typeDefs = gql`
         approximateSleepTime: String!
         sleepInterrupted: Int!
         sleepLostFromInterruptions: Float!
+        wakeUpDate: String!
         wakeUpTime: String!
         ateSpicy: Boolean!
         drankAlcohol: Boolean!
         sleepMeds: Boolean!
         userId: Int!
         notes: String
-        points: Float!
+        points: Float
     }
     
     type Query {
@@ -37,6 +38,7 @@ const typeDefs = gql`
             approximateSleepTime: String!
             sleepInterrupted: Int!
             sleepLostFromInterruptions: Float!
+            wakeUpDate: String!
             wakeUpTime: String!
             ateSpicy: Boolean!
             drankAlcohol: Boolean!

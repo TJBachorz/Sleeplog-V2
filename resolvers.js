@@ -66,6 +66,7 @@ const resolvers = {
             approximateSleepTime,
             sleepInterrupted,
             sleepLostFromInterruptions,
+            wakeUpDate,
             wakeUpTime,
             ateSpicy,
             drankAlcohol,
@@ -73,24 +74,21 @@ const resolvers = {
             userId,
             notes
         }) {
-            // const [sleepHours, sleepMinutes, sleepSeconds, meridium] = approximateSleepTime.split(/[\s:]+/);
-            // console.log('sleepHours', sleepHours)
-            // console.log('sleepMinutes', sleepMinutes)
-            // console.log('sleepSeconds', sleepSeconds)
-            // console.log('meridium', meridium)
+            // const sleepTime = new Date(nightOfDate + ' ' + approximateSleepTime);
+            // const wakeTime = new Date(wakeUpDate + ' ' + wakeUpTime);
             return Sleeplog.create({
                 nightOfDate,
                 bedtime,
                 approximateSleepTime,
                 sleepInterrupted,
                 sleepLostFromInterruptions,
+                wakeUpDate,
                 wakeUpTime,
                 ateSpicy,
                 drankAlcohol,
                 sleepMeds,
                 userId,
                 notes,
-                points
             });
         },
     },
