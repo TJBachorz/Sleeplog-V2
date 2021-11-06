@@ -73,6 +73,11 @@ const resolvers = {
             userId,
             notes
         }) {
+            // const [sleepHours, sleepMinutes, sleepSeconds, meridium] = approximateSleepTime.split(/[\s:]+/);
+            // console.log('sleepHours', sleepHours)
+            // console.log('sleepMinutes', sleepMinutes)
+            // console.log('sleepSeconds', sleepSeconds)
+            // console.log('meridium', meridium)
             return Sleeplog.create({
                 nightOfDate,
                 bedtime,
@@ -84,7 +89,8 @@ const resolvers = {
                 drankAlcohol,
                 sleepMeds,
                 userId,
-                notes
+                notes,
+                points
             });
         },
     },

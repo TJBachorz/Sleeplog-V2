@@ -2,15 +2,10 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    queryInterface.addColumn('Sleeplogs', 'notes', { type: Sequelize.STRING });
+    await queryInterface.addColumn('Sleeplogs', 'notes', { type: Sequelize.STRING });
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+    await queryInterface.removeColumn('Sleeplogs', 'notes', { type: Sequelize.STRING });
   }
 };

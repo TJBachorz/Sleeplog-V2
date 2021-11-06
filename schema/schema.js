@@ -19,6 +19,7 @@ const typeDefs = gql`
         sleepMeds: Boolean!
         userId: Int!
         notes: String
+        points: Float!
     }
     
     type Query {
