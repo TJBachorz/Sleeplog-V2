@@ -1,8 +1,9 @@
-const { Sleeplog, User } = require("./models");
-const bcrypt = require("bcrypt");
-const jsonwebtoken = require("jsonwebtoken");
+const dayjs = require('dayjs');
+const { Sleeplog, User } = require('./models');
+const bcrypt = require('bcrypt');
+const jsonwebtoken = require('jsonwebtoken');
 
-const JWT_SECRET = require("./constants");
+const JWT_SECRET = require('./constants');
 
 const resolvers = {
     Query: {
@@ -76,6 +77,7 @@ const resolvers = {
         }) {
             // const sleepTime = new Date(nightOfDate + ' ' + approximateSleepTime);
             // const wakeTime = new Date(wakeUpDate + ' ' + wakeUpTime);
+            // console.log(dayjs(wakeTime))
             return Sleeplog.create({
                 nightOfDate,
                 bedtime,
