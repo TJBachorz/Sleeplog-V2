@@ -25,8 +25,8 @@ const typeDefs = gql`
     }
 
     type LoginReturn {
-        userId: Int
-        token: String
+        userId: Int!
+        token: String!
     }
 
     type Query {
