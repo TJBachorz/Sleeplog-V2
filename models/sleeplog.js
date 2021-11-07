@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Sleeplog.init({
     nightOfDate: DataTypes.STRING,
     bedtime: DataTypes.STRING,
+    sleepDate: DataTypes.STRING,
     approximateSleepTime: DataTypes.STRING,
     sleepInterrupted: DataTypes.INTEGER,
     sleepLostFromInterruptions: DataTypes.DECIMAL(10,2),

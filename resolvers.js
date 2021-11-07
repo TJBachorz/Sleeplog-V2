@@ -1,4 +1,5 @@
 const dayjs = require('dayjs');
+
 const { Sleeplog, User } = require('./models');
 const bcrypt = require('bcrypt');
 const jsonwebtoken = require('jsonwebtoken');
@@ -67,6 +68,7 @@ const resolvers = {
         async newSleeplog(_, { 
             nightOfDate,
             bedtime,
+            sleepDate,
             approximateSleepTime,
             sleepInterrupted,
             sleepLostFromInterruptions,
@@ -78,12 +80,19 @@ const resolvers = {
             userId,
             notes
         }) {
-            // const sleepTime = new Date(nightOfDate + ' ' + approximateSleepTime);
-            const wakeTime = dayjs(wakeUpDate + ' ' + wakeUpTime);
-            console.log(wakeTime)
+
+            const sleepDatetime = dayjs(sleepDate + ' ' + approximateSleepTime);
+            const wakeDatetime = dayjs(wakeUpDate + ' ' + wakeUpTime);
+
+            let points = (wakeDatetime.diff(sleepDatetime, 'h', true) - sleepLostFromInterruptions).toFixed(2);
+            if (points < 0) {
+                points = 0;
+            }
+
             return Sleeplog.create({
                 nightOfDate,
                 bedtime,
+                sleepDate,
                 approximateSleepTime,
                 sleepInterrupted,
                 sleepLostFromInterruptions,
@@ -94,6 +103,7 @@ const resolvers = {
                 sleepMeds,
                 userId,
                 notes,
+                points
             });
         },
     },

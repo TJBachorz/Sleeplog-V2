@@ -10,6 +10,7 @@ const typeDefs = gql`
         id: Int!
         nightOfDate: String!
         bedtime: String!
+        sleepDate: String!
         approximateSleepTime: String!
         sleepInterrupted: Int!
         sleepLostFromInterruptions: Float!
@@ -40,6 +41,7 @@ const typeDefs = gql`
         newSleeplog(
             nightOfDate: String!
             bedtime: String!
+            sleepDate: String!
             approximateSleepTime: String!
             sleepInterrupted: Int!
             sleepLostFromInterruptions: Float!
@@ -52,6 +54,6 @@ const typeDefs = gql`
             notes: String
         ): Sleeplog
     }
-    `;
-    
+`;
+
     module.exports = typeDefs;
