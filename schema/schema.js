@@ -22,7 +22,12 @@ const typeDefs = gql`
         notes: String
         points: Float
     }
-    
+
+    type LoginReturn {
+        userId: Int
+        token: String
+    }
+
     type Query {
         current: User
         findSleeplog(id: Int!): Sleeplog
@@ -31,7 +36,7 @@ const typeDefs = gql`
 
     type Mutation {
         register(email: String!, password: String!): String
-        login(email: String!, password: String!): String
+        login(email: String!, password: String!): LoginReturn
         newSleeplog(
             nightOfDate: String!
             bedtime: String!

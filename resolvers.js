@@ -56,9 +56,12 @@ const resolvers = {
                 throw new Error("You password is incorrect!");
             }
 
-            return jsonwebtoken.sign({ id: user.id, email: user.email }, JWT_SECRET, {
-                expiresIn: "1d",
-            });
+            return {
+                userId: user.id,
+                token: jsonwebtoken.sign({ id: user.id, email: user.email }, JWT_SECRET, {
+                    expiresIn: "1d",
+                })
+            }
         },
 
         async newSleeplog(_, { 
@@ -76,8 +79,8 @@ const resolvers = {
             notes
         }) {
             // const sleepTime = new Date(nightOfDate + ' ' + approximateSleepTime);
-            // const wakeTime = new Date(wakeUpDate + ' ' + wakeUpTime);
-            // console.log(dayjs(wakeTime))
+            const wakeTime = dayjs(wakeUpDate + ' ' + wakeUpTime);
+            console.log(wakeTime)
             return Sleeplog.create({
                 nightOfDate,
                 bedtime,
