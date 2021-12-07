@@ -19,6 +19,7 @@ const typeDefs = gql`
         ateSpicy: Boolean!
         drankAlcohol: Boolean!
         sleepMeds: Boolean!
+        useMarijuana: Boolean!
         userId: Int!
         notes: String
         points: Float
@@ -50,6 +51,7 @@ const typeDefs = gql`
             ateSpicy: Boolean!
             drankAlcohol: Boolean!
             sleepMeds: Boolean!
+            useMarijuana: Boolean!
             userId: Int!
             notes: String
         ): Sleeplog

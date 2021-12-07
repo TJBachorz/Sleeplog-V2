@@ -77,6 +77,7 @@ const resolvers = {
             ateSpicy,
             drankAlcohol,
             sleepMeds,
+            useMarijuana,
             userId,
             notes
         }) {
@@ -101,6 +102,7 @@ const resolvers = {
                 ateSpicy,
                 drankAlcohol,
                 sleepMeds,
+                useMarijuana,
                 userId,
                 notes,
                 points

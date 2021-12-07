@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     ateSpicy: DataTypes.BOOLEAN,
     drankAlcohol: DataTypes.BOOLEAN,
     sleepMeds: DataTypes.BOOLEAN,
+    useMarijuana: DataTypes.BOOLEAN,
     userId: DataTypes.INTEGER,
     notes: DataTypes.STRING,
     points: DataTypes.DECIMAL(10,2)
